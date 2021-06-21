@@ -1,0 +1,17 @@
+a=[(1,3),(2,6),(3,5),(7,4),(5,3),(6,2),(1,3)]
+
+dic={}
+for key,value in a:
+    if key not in dic and value not in dic:
+        dic[key] = value
+    elif key not in dic :
+        if value in dic and dic[value] != key :
+            dic[key]=value
+        else:
+            print(f'symmetric found for ({key},{value}) - ({value},{key})')
+    elif key in dic and dic[key] == value:
+            print(f'found duplicate pair ({key},{value})')
+
+print(dic)
+
+
